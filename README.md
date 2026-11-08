@@ -3,7 +3,12 @@
 <p align="center">
 <i>A personal, ever-evolving Windows customization project.</i>
 <br>
-Built with curiosity, experimentation, and a little help from friends ^^
+
+> [!NOTE]
+>This repository contains my personal Windows rice: a collection of applications, tools, configurations, and visual tweaks that come together to create my ideal desktop experience.
+The setup is heavily inspired by the customization and ricing communities, with a focus on aesthetics, functionality, and a comfortable workflow.
+It's a continuous work in progress. Things will change, new tools will be added, and old ones might eventually be replaced.
+
 </p>
 
 <p align="center">
@@ -12,45 +17,81 @@ Built with curiosity, experimentation, and a little help from friends ^^
 <img src="https://img.shields.io/badge/Made%20with-The%20Power%20Of%20Friendship-brown?style=for-the-badge" alt="Made with the power of friendship">
 </p>
 
-## 📑 Table of Contents
-
-| 📚 Name | ✨ Source |
-|---------------------|------------|
-| Status Bar          | [Animated YASB](https://github.com/darco-ctrl/AnimatedYasb) |
-| Window Manager      | [Ricewm](https://github.com/darco-ctrl/riceWM) |
-| Window Manager      | Fork of [GlazeWM](https://github.com/glzr-io/glazewm) |
-| App Launcher        | [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher) and/or [wisp](https://github.com/SumirSeth/wisp)|
-| Dock                | [Wisp](https://github.com/SumirSeth/wisp) |
-| Text Editor         | [VSCodium](https://vscodium.com/) |
-| Terminal            | [Windows Terminal](https://github.com/microsoft/terminal) |
-| Browser             | [Helium](https://github.com/imputnet/helium) and [Zen](https://zen-browser.app/)|
-| System Fetch        | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) |   
-| Shell Prompt        | [Starship](https://github.com/starship/starship) |
-| Audio Visualizer    | [Cava](https://github.com/karlstav/cava) | 
-| Note Taking         | [Obsidian](https://obsidian.md) |
-| Screen Recording    | [OBS Studio](https://github.com/obsproject/obs-studio) |
-| File's App          | [File Pilot](https://filepilot.tech/) |
-| System dashboard    | [Rice-dash](https://github.com/HonourableAF/rice-dash) and [btop4win](https://github.com/aristocratos/btop4win)|
-| WSL Distro          | [Arch btw](https://wiki.archlinux.org/title/Install_Arch_Linux_on_WSL) |
-
-Other
-
-| 📚 Name | ✨ Source |
-|---------------------|------------|
-| Color scheme        | [Matugen](https://github.com/InioX/matugen) |
-| Wallpaper           | Mostly from [Youtube](https://youtube.com) |
-| Fonts               | [JetbrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip) |
-
-
 ---
 
-This repository contains my personal Windows rice: a collection of applications, tools, configurations, and visual tweaks that come together to create my ideal desktop experience.
+### ℹ️ Whole System Info
 
-The setup is heavily inspired by the customization and ricing communities, with a focus on aesthetics, functionality, and a comfortable workflow.
+Here is all the information about my setup:
 
-It's a continuous work in progress. Things will change, new tools will be added, and old ones might eventually be replaced.
+<details>
+	
+<summary>🪟 <b>System</b></summary>
 
----
+<br>
+
+| 📚 Entry              	 | ✨ App                  |
+|--------------------------|--------------------------|
+| **OS** 				 				   | [Windows 11](https://www.microsoft.com/en-in/windows/windows-11) + [WSL2](https://learn.microsoft.com/en-us/windows/wsl/) |
+| **WSL Distro**           | [Arch btw](https://wiki.archlinux.org/title/Install_Arch_Linux_on_WSL) |
+| **Window Manager** 			 | Fork of [GlazeWM](https://github.com/glzr-io/glazewm) |
+| **Bar** 				 				 | [Animated YASB](https://github.com/darco-ctrl/AnimatedYasb) |
+| **Mods** 				 				 | 💖 [Windhawk](https://windhawk.net/) |
+| **App Launcher**         | [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher) and/or [wisp](https://github.com/SumirSeth/wisp)|
+| **Dock**                 | [Wisp](https://github.com/SumirSeth/wisp) |
+
+</details>
+
+<details>
+	
+<summary>🖥️ <b>CLI/TUI Apps</b> </summary>
+
+<br>
+
+Configs for these can be found in [**dotfiles**](https://github.com/96raf1/Windows-rice/tree/main/.config)
+
+| 📚 Entry                           	 | ✨ App                  |
+|----------------------------------------|--------------------------|
+| **Shell**                              | 💖 [Powershell 7] |
+| **Terminal Emulator**                  | [Windows Terminal](https://github.com/microsoft/terminal) |
+| **Shell Prompt**                       | [Starship](https://github.com/starship/starship) |
+| **Text Editor**                        | [VSCodium](https://vscodium.com/) |
+| **File Manager**                       | [File Pilot](https://filepilot.tech/) |
+| **Git**                                | [git](https://git-scm.com/) [⚙️](https://github.com/ashish0kumar/dotfiles/tree/main/.config/git) |
+| **Git TUI**                            | [lazygit](https://github.com/jesseduffield/lazygit) |
+| **System Monitor**                     | [Rice-dash](https://github.com/HonourableAF/rice-dash) and [btop4win](https://github.com/aristocratos/btop4win)|
+| **System Fetch**                       | [fastfetch](https://github.com/fastfetch-cli/fastfetch) |
+| **Audio Visualizer** 			 		         | [cava](https://github.com/karlstav/cava) |
+
+</details>
+
+<details>
+	
+<summary>🖱️ <b>GUI Apps</b></summary>
+
+<br>
+
+| 📚 Entry                           	 | ✨ App                  |
+|----------------------------------------|--------------------------|
+| **Web Browser**               	 	     | [Helium](https://github.com/imputnet/helium) and [Zen-Browser](https://zen-browser.app) |
+| **Helium Startpage**
+| **Office Apps**                     	 | [LibreOffice](https://www.libreoffice.org/) |
+
+</details>
+ 
+<details>
+	
+<summary>🔍 <b>Other</b></summary>
+
+<br>
+
+| 📚 Name | ✨ Source |
+|-------------------------|------------|
+| **Color scheme**        | [Matugen](https://github.com/InioX/matugen) |
+| **Wallpaper**           | Mostly from [Youtube](https://youtube.com) |
+| **Fonts**               | [JetbrainsMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip) |
+
+</details>
+ 
 # ⚡ Details
 
 ## 📏 YASB
@@ -90,3 +131,55 @@ You can follow the steps below, or jump to Sam's [**setup video**](https://youtu
 <p align="center">
 The rest of the applications and CLIs should have simple and easy to follow guides, so just follow them. Besides, Sam (Sleepycathey) already made tutorials on this, so you shouldn't struggle too hard.
 </p>
+
+---
+
+ many of the applications, configs, and inspiration have been provided to me by and/or inspired by my friends, so check them out!
+of course, I did make some stuff myself, like most of the matugen templates, though Bullet helped me initially.
+
+<details>
+	
+<summary>🪟 <b>Credits</b></summary>
+
+<br>
+
+Credit and special thanks to the friends I made along the way:
+- 🐜 Bullet Ant
+- 🐈 [Sam](https://github.com/SleepyCatHey)
+- 🦋 [Radiant Moth](https://github.com/v0id-joker)
+- [Darklore Aether](https://www.youtube.com/channel/UCEbNE-5Hwgr_IyNroER2NpA)
+- Yamii
+- [Nonamenguyen](https://github.com/NonameNguyeen)
+- [Nephren](https://github.com/NephVx2)
+- [Livesyedd](https://github.com/NitroBeast76)
+- [Ben](https://github.com/bobpyyylz)
+- Histy
+- HighCaillou
+- Cesium
+- [Frost](https://github.com/Shadowniko1)
+- Karma
+- Haiku
+- [Pivux](https://x.com/PivuxD)
+- Derivative
+- [Nobody](https://github.com/xfa3k)
+- Jack Hex
+- Darius
+- Froggo
+- E
+- L
+- Penguin
+- 7丁卄_卩尺ㄖ丁ㄖ匚ㄖㄥ
+and the rest of the [Sleeping Cult](https://discord.gg/sustkTynuB)!!!
+
+<br>
+
+Credit also goes to:
+- Random people on Reddit
+- Random people on Youtube
+- 
+
+
+</details>
+
+---
+## PS: This README is a fork lol
