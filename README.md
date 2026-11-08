@@ -105,7 +105,7 @@ A highly configurable Windows status bar written in Python.
 **⚙️ Installation:**  
 You can follow the steps below, or jump to Sam's [**setup video**](https://www.youtube.com/watch?v=YVCK3z-eLvk).
 - Install [**Animated YASB**]([(https://github.com/darco-ctrl/AnimatedYasb)])   
-- Copy the config files from [**here**]().
+- Copy the config files from [**here**](https://github.com/96raf1/Windows-rice/blob/main/.config/YASB/config.yaml).
 - Remove the codes from **your** YASB config and paste the one you just copied.
 - Restart **YASB** for the changes to take effect. YASB should automatically restart, so you shouldn't worry on that.
 
@@ -122,7 +122,7 @@ GlazeWM lets you easily organize windows and adjust their layout on the fly by u
 **⚙️ Installation:**  
 You can follow the steps below, or jump to Sam's [**setup video**](https://youtu.be/b57zFm3nVxA).
 - Install [**GlazeWM**](https://github.com/glzr-io/glazewm)   
-- Copy the config file from [**here**]().
+- Copy the config file from [**here**](https://github.com/96raf1/Windows-rice/blob/main/.config/GlazeWM/config.yaml).
 - Remove the codes from **your** GlazeWM config and paste the one you just copied.
 - Restart **GlazeWM** for the changes to take effect.
 
