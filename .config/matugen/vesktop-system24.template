@@ -1,0 +1,539 @@
+/**
+ * @name system24
+ * @description a tui-style discord theme.
+ * @author refact0r
+ * @version 2.0.0
+ * @invite nz87hXyvcy
+ * @website https://github.com/refact0r/system24
+ * @source https://github.com/refact0r/system24/blob/master/theme/system24.theme.css
+ * @authorId 508863359777505290
+ * @authorLink https://www.refact0r.dev
+*/
+
+/* import theme modules */
+@import url("https://snajperexe.github.io/TokyoMidnight/addons/memberlist.css");
+@import url('https://refact0r.github.io/system24/build/system24.css');
+
+body {
+    /* font, change to '' for default discord font */
+    --font: 'DM Mono'; /* change to '' for default discord font */
+    --code-font: 'DM Mono'; /* change to '' for default discord font */
+    font-weight: 300; /* text font weight. 300 is light, 400 is normal. DOES NOT AFFECT BOLD TEXT */
+    letter-spacing: -0.05ch; /* decreases letter spacing for better readability. recommended on monospace fonts.*/
+
+    /* sizes */
+    --gap: 12px; /* spacing between panels */
+    --divider-thickness: 4px; /* thickness of unread messages divider and highlighted message borders */
+    --border-thickness: 2.5px; /* thickness of borders around main panels. DOES NOT AFFECT OTHER BORDERS */
+    --border-hover-transition: 0.2s ease; /* transition for borders when hovered */
+
+    /* animation/transition options */
+    --animations: on; /* off: disable animations/transitions, on: enable animations/transitions */
+    --list-item-transition: 0.2s ease; /* transition for list items */
+    --dms-icon-svg-transition: 0.4s ease; /* transition for the dms icon */
+
+    /* top bar options */
+    --top-bar-height: var(--gap); /* height of the top bar (discord default is 36px, old discord style is 24px, var(--gap) recommended if button position is set to titlebar) */
+    --top-bar-button-position: titlebar; /* off: default position, hide: hide buttons completely, serverlist: move inbox button to server list, titlebar: move inbox button to channel titlebar (will hide title) */
+    --top-bar-title-position: off; /* off: default centered position, hide: hide title completely, left: left align title (like old discord) */
+    --subtle-top-bar-title: off; /* off: default, on: hide the icon and use subtle text color (like old discord) */
+
+    /* window controls */
+    --custom-window-controls: on; /* off: default window controls, on: custom window controls */
+    --window-control-size: 14px; /* size of custom window controls */
+
+    /* dms button options */
+    --custom-dms-icon: custom; /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
+    --spider: url('data:image/png;base64,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');
+    --skull: url('data:image/png;base64,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');
+    --dms-icon-svg-url: url("https://refact0r.github.io/midnight-discord/assets/Font_Awesome_5_solid_moon.svg");
+    --dms-icon-svg-size: 90%; /* icon svg url. MUST BE A SVG. */
+    --dms-icon-svg-size: 90%; /* size of the svg (css mask-size property) */
+    --dms-icon-color-before: var(--icon-subtle); /* normal icon color */
+    --dms-icon-color-after: var(--white); /* icon color when button is hovered/selected */
+    --custom-dms-background: off; /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
+    --dms-background-image-url: url(''); /* url of the background image */
+    --dms-background-image-size: cover; /* size of the background image (css background-size property) */
+    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2)); /* fixed color/gradient (css background property) */
+
+    /* background image options */
+    --background-image: off; /* off: no background image, on: enable background image (must set url variable below) */
+    --background-image-url: url(''); /* url of the background image */
+
+    /* transparency/blur options */
+    /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
+    --transparency-tweaks: off; /* off: no changes, on: remove some elements for better transparency */
+    --remove-bg-layer: off; /* off: no changes, on: remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
+    --panel-blur: off; /* off: no changes, on: blur the background of panels */
+    --blur-amount: 12px; /* amount of blur */
+    --bg-floating: var(--bg-3); /* set this to a more opaque color if floating panels look too transparent. only applies if panel blur is on  */
+
+    /* other options */
+    --small-user-panel: on; /* off: default user panel, on: smaller user panel like in old discord */
+
+    /* unrounding options */
+    --unrounding: on; /* off: default, on: remove rounded corners from panels */
+
+    /* styling options */
+    --custom-spotify-bar: on; /* off: default, on: custom text-like spotify progress bar */
+    --ascii-titles: on; /* off: default, on: use ascii font for titles at the start of a channel */
+    --ascii-loader: system24; /* off: default, system24: use system24 ascii loader, cats: use cats loader */
+
+    /* panel labels */
+    --panel-labels: on; /* off: default, on: add labels to panels */
+    --label-color: var(--text-muted); /* color of labels */
+    --label-font-weight: 500; /* font weight of labels */
+}
+
+/* color options */
+:root {
+    --colors: on; /* off: discord default colors, on: midnight custom colors */
+
+    /* text colors */
+    --text-0: {{colors.surface.default.hex}};               /* text on colored elements */
+    --text-1: {{colors.on_surface.default.hex}};            /* other normally white text */
+    --text-2: {{colors.on_surface.default.hex}};            /* headings and important text */
+    --text-3: {{colors.on_surface_variant.default.hex}};    /* normal text */
+    --text-4: {{colors.on_surface_variant.default.hex}};    /* icon buttons and channels */
+    --text-5: {{colors.outline.default.hex}};               /* muted channels/chats and timestamps */
+
+    /* background and dark colors */
+    --bg-1: {{colors.surface_variant.default.hex}};                     /* dark buttons when clicked */
+    --bg-2: {{colors.surface_container_high.default.hex}};              /* dark buttons */
+    --bg-3: {{colors.surface_container_low.default.hex}};               /* spacing, secondary elements */
+    --bg-4: {{colors.surface.default.hex}};                             /* main background color */
+    --hover: {{colors.surface_bright.default.hex}};                     /* channels and buttons when hovered */
+    --active: {{colors.surface_bright.default.hex}};                    /* channels and buttons when clicked or selected */
+    --message-hover: {{colors.surface_bright.default.hex}};             /* messages when hovered */
+
+    /* accent colors */
+    --accent-1: {{colors.tertiary.default.hex}};            /* links */
+    --accent-2: {{colors.primary.default.hex}};             /* general unread/mention elements, some icons when active */
+    --accent-3: {{colors.primary.default.hex}};             /* accent buttons */
+    --accent-4: {{colors.surface_bright.default.hex}};      /* accent buttons when hovered */
+    --accent-5: {{colors.primary_fixed_dim.default.hex}};   /* accent buttons when clicked */
+    --accent-new: {{colors.inverse_primary.default.hex}};   /* user panel mute & deafen buttons */
+    --mention:  {{colors.surface.default.hex}};             /* mentions & mention messages */
+    --mention-hover: {{colors.surface_bright.default.hex}}; /* mentions & mention messages when hovered */
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent); /* background of messages that reply to you */
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent); /* background of messages that reply to you when hovered */
+
+    /* color of status indicators and window controls */
+    --online-indicator: {{colors.inverse_primary.default.hex}};     /* change to #23a55a for default green */
+    --dnd-indicator: {{colors.error.default.hex}};                  /* change to #f13f43 for default red */
+    --idle-indicator: {{colors.tertiary_container.default.hex}};    /* change to #f0b232 for default yellow */
+    --streaming-indicator: {{colors.on_primary.default.hex}};       /* change to #593695 for default purple */
+    --offline: var(--text-4); /* change to #82838b for default offline color */
+
+    /* border colors */
+    --border-light: var(--hover); /* general light border color */
+    --border: var(--active); /* general normal border color */
+    --border-hover: var(--accent-2); /* border color of panels when hovered */
+    --button-border: hsl(220, 0%, 100%, 0.1); /* neutral border color of buttons */
+
+    /* base colors */
+    --red-1: oklch(75% 0.13 0);
+    --red-2: oklch(70% 0.13 0);
+    --red-3: oklch(65% 0.13 0);
+    --red-4: oklch(60% 0.13 0);
+    --red-5: oklch(55% 0.13 0);
+
+    --green-1: oklch(75% 0.12 170);
+    --green-2: oklch(70% 0.12 170);
+    --green-3: oklch(65% 0.12 170);
+    --green-4: oklch(60% 0.12 170);
+    --green-5: oklch(55% 0.12 160);
+
+    --blue-1: oklch(75% 0.11 215);
+    --blue-2: oklch(70% 0.11 215);
+    --blue-3: oklch(65% 0.11 215);
+    --blue-4: oklch(60% 0.11 215);
+    --blue-5: oklch(55% 0.11 215);
+
+    --yellow-1: oklch(80% 0.12 90);
+    --yellow-2: oklch(75% 0.12 90);
+    --yellow-3: oklch(70% 0.12 90);
+    --yellow-4: oklch(65% 0.12 90);
+    --yellow-5: oklch(60% 0.12 90);
+
+    --purple-1: oklch(75% 0.12 310);
+    --purple-2: oklch(70% 0.12 310);
+    --purple-3: oklch(65% 0.12 310);
+    --purple-4: oklch(60% 0.12 310);
+    --purple-5: oklch(55% 0.12 310);
+}
+
+/* =====================================================
+   DISCORD NATIVE SEMANTIC VARIABLES
+   Dynamic wallpaper-driven Arcana mapping
+   ===================================================== */
+
+:root {
+
+/*
+ * SURFACES
+ * Deep transparent layers built from the wallpaper's
+ * generated surface colors.
+ */
+
+--background-primary:
+    color-mix(in srgb, {{colors.surface.default.hex}} 34%, transparent) !important;
+
+--background-secondary:
+    color-mix(in srgb, {{colors.surface.default.hex}} 46%, transparent) !important;
+
+--background-secondary-alt:
+    color-mix(in srgb, {{colors.surface_container.default.hex}} 40%, transparent) !important;
+
+--background-tertiary:
+    color-mix(in srgb, {{colors.surface.default.hex}} 56%, transparent) !important;
+
+/*
+ * BASE LAYERS
+ */
+
+--background-base-low:
+    color-mix(in srgb, {{colors.surface.default.hex}} 30%, transparent) !important;
+
+--background-base-lower:
+    color-mix(in srgb, {{colors.surface.default.hex}} 38%, transparent) !important;
+
+--background-base-lowest:
+    color-mix(in srgb, {{colors.surface.default.hex}} 50%, transparent) !important;
+
+/*
+ * RAISED SURFACES
+ * A small amount of secondary color gives the glass
+ * its atmospheric tint.
+ */
+
+--background-surface-high:
+    color-mix(in srgb, {{colors.secondary.default.hex}} 4.5%, transparent) !important;
+
+--background-surface-higher:
+    color-mix(in srgb, {{colors.secondary.default.hex}} 7%, transparent) !important;
+
+--background-surface-highest:
+    color-mix(in srgb, {{colors.on_surface_variant.default.hex}} 9.5%, transparent) !important;
+
+/*
+ * SYSTEM24 BASE SURFACES
+ */
+
+--bg-base-primary:
+    color-mix(in srgb, {{colors.surface.default.hex}} 32%, transparent) !important;
+
+--bg-base-secondary:
+    color-mix(in srgb, {{colors.surface.default.hex}} 42%, transparent) !important;
+
+--bg-base-tertiary:
+    color-mix(in srgb, {{colors.surface_container.default.hex}} 42%, transparent) !important;
+
+/*
+ * OVERLAYS / RAISED PANELS
+ */
+
+--bg-surface-overlay:
+    color-mix(in srgb, {{colors.surface.default.hex}} 80%, transparent) !important;
+
+--bg-surface-raised:
+    color-mix(in srgb, {{colors.primary_container.default.hex}} 68%, transparent) !important;
+
+--background-floating:
+    color-mix(in srgb, {{colors.surface.default.hex}} 84%, transparent) !important;
+
+--background-nested-floating:
+    color-mix(in srgb, {{colors.surface.default.hex}} 78%, transparent) !important;
+
+/*
+ * CHAT / INPUT / MODALS
+ */
+
+--chat-background-default:
+    color-mix(in srgb, {{colors.surface.default.hex}} 26%, transparent) !important;
+
+--input-background:
+    color-mix(in srgb, {{colors.surface.default.hex}} 64%, transparent) !important;
+
+--modal-background:
+    color-mix(in srgb, {{colors.surface.default.hex}} 80%, transparent) !important;
+
+--modal-footer-background:
+    color-mix(in srgb, {{colors.surface.default.hex}} 82%, transparent) !important;
+
+/*
+ * INTERACTION
+ *
+ * Primary = luminous accent
+ * Primary container = deeper accent
+ */
+
+--background-accent:
+    color-mix(in srgb, {{colors.primary_container.default.hex}} 30%, transparent) !important;
+
+--background-modifier-hover:
+    color-mix(in srgb, {{colors.primary.default.hex}} 7.5%, transparent) !important;
+
+--background-modifier-active:
+    color-mix(in srgb, {{colors.primary_container.default.hex}} 34%, transparent) !important;
+
+--background-modifier-selected:
+    color-mix(in srgb, {{colors.primary_container.default.hex}} 46%, transparent) !important;
+
+--background-modifier-accent:
+    color-mix(in srgb, {{colors.secondary.default.hex}} 7.5%, transparent) !important;
+
+/*
+ * SUBTLE MODIFIERS
+ */
+
+--bg-mod-faint:
+    color-mix(in srgb, {{colors.secondary.default.hex}} 3.5%, transparent) !important;
+
+--bg-mod-subtle:
+    color-mix(in srgb, {{colors.secondary.default.hex}} 6.5%, transparent) !important;
+
+--bg-mod-strong:
+    color-mix(in srgb, {{colors.primary_container.default.hex}} 34%, transparent) !important;
+
+/*
+ * BORDERS
+ *
+ * Outline provides the neutral glass edge.
+ * Primary provides the luminous focused edge.
+ */
+
+--border-faint:
+    color-mix(in srgb, {{colors.outline.default.hex}} 5%, transparent) !important;
+
+--border-subtle:
+    color-mix(in srgb, {{colors.outline.default.hex}} 8%, transparent) !important;
+
+--border-normal:
+    color-mix(in srgb, {{colors.secondary.default.hex}} 12%, transparent) !important;
+
+--border-strong:
+    color-mix(in srgb, {{colors.primary.default.hex}} 24%, transparent) !important;
+
+--input-border:
+    color-mix(in srgb, {{colors.outline.default.hex}} 12%, transparent) !important;
+
+/*
+ * INTERACTIVE TEXT / ICONS
+ */
+
+--interactive-normal: {{colors.on_surface_variant.default.hex}} !important;
+--interactive-hover: {{colors.on_surface.default.hex}} !important;
+--interactive-active: {{colors.on_primary.default.hex}} !important;
+--interactive-muted: {{colors.outline.default.hex}} !important;
+
+--channels-default: {{colors.on_surface_variant.default.hex}} !important;
+--channel-icon: {{colors.outline.default.hex}} !important;
+--channel-text-area-placeholder: {{colors.outline.default.hex}} !important;
+
+/*
+ * MENTIONS
+ */
+
+--mention-foreground: {{colors.on_primary.default.hex}} !important;
+
+--mention-background:
+    color-mix(in srgb, {{colors.primary.default.hex}} 12%, transparent) !important;
+
+/*
+ * BRAND / BLURPLE
+ *
+ * Discord's blue/purple branding is redirected into
+ * the wallpaper's generated primary color family.
+ */
+
+--brand-260: {{colors.on_primary_container.default.hex}} !important;
+--brand-360: {{colors.secondary.default.hex}} !important;
+--brand-500: {{colors.primary.default.hex}} !important;
+--brand-560: {{colors.primary_container.default.hex}} !important;
+--brand-600: {{colors.primary_container.default.hex}} !important;
+
+--blurple-50: {{colors.primary.default.hex}} !important;
+--bg-brand: {{colors.primary_container.default.hex}} !important;
+
+/*
+ * STATUS
+ *
+ * Keep semantic meaning here rather than forcing
+ * everything into the accent color.
+ */
+
+--status-positive: {{colors.secondary.default.hex}} !important;
+--status-warning: {{colors.tertiary.default.hex}} !important;
+--status-danger: {{colors.error.default.hex}} !important;
+--status-speaking: {{colors.primary.default.hex}} !important;
+
+/*
+ * SCROLLBARS
+ */
+
+--scrollbar-auto-thumb: {{colors.primary_container.default.hex}} !important;
+--scrollbar-auto-track: transparent !important;
+
+--scrollbar-thin-thumb: {{colors.primary_container.default.hex}} !important;
+--scrollbar-thin-track: transparent !important;
+
+}
+
+/* =========================================================
+   WINDOW / APP TRANSPARENCY
+   ========================================================= */
+
+html,
+body,
+#app-mount {
+    background: transparent !important;
+}
+
+/* =========================================================
+   MAIN SURFACES
+   ========================================================= */
+
+[class*="sidebar"],
+[class*="chat"],
+[class*="membersWrap"],
+[class*="panels"],
+[class*="content"],
+[class*="container"] {
+    border-color: rgba(137,209,223,0.08) !important;
+}
+
+
+/* =========================================================
+   FLOATING GLASS
+   ========================================================= */
+
+[class*="menu"],
+[class*="popout"],
+[class*="tooltip"],
+[class*="picker"],
+[role="menu"] {
+    background-color: rgba(8,12,21,0.82) !important;
+    backdrop-filter: blur(20px) saturate(118%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(118%) !important;
+
+    border-color: rgba(137,209,223,0.12) !important;
+    box-shadow:
+        0 8px 28px rgba(0,0,0,0.34), 0 0 24px rgba(13,209,229,0.035) !important;
+}
+
+/*
+ * Dialogs stay translucent through the semantic Discord variables,
+ * but do NOT receive backdrop-filter here. This avoids creating
+ * unwanted containing/stacking contexts for fullscreen media controls.
+ */
+[role="dialog"],
+[class*="modal"] {
+    border-color: rgba(137,209,223,0.12) !important;
+}
+
+/* =========================================================
+   DISCORD MEDIA / IMAGE PREVIEW FIX
+   Keep fullscreen carousel completely out of the generic glass layer.
+   ========================================================= */
+
+[class*="carouselModal"],
+[role="dialog"][class*="carouselModal"],
+[role="dialog"]:has([class*="carouselModal"]) {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+/* Do not let descendants of the media viewer inherit accidental blur. */
+[class*="carouselModal"] [class*="modal"],
+[class*="carouselModal"] [role="dialog"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+input,
+textarea {
+    background-color: rgba(8,12,21,0.64) !important;
+    color: #F4FBFF !important;
+    border-color: rgba(137,209,223,0.12) !important;
+}
+
+
+/* =========================================================
+   BUTTONS / SELECTED STATES
+   ========================================================= */
+
+button:hover,
+[role="button"]:hover {
+    background-color: rgba(13,209,229,0.075) !important;
+}
+
+[aria-selected="true"],
+[class*="selected"] {
+    background-color: rgba(25,82,129,0.46) !important;
+}
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+::-webkit-scrollbar-thumb {
+    background-color: #195281 !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #4CC0D8 !important;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent !important;
+}
+
+/* =========================================================
+   ARCANA TRADITIONAL — FINAL ASTRAL POLISH
+   ========================================================= */
+
+/* Thin cyan focus ring rather than Discord blurple */
+:focus-visible {
+    outline-color: rgba(13, 209, 229, 0.72) !important;
+}
+
+/* Selected navigation / channels: YASB-like sapphire glass */
+[aria-selected="true"],
+[class*="selected"] {
+    box-shadow:
+        inset 2px 0 0 rgba(13, 209, 229, 0.72),
+        inset 0 0 0 1px rgba(137, 209, 223, 0.055) !important;
+}
+
+/* Unread / notification emphasis */
+[class*="unread"],
+[class*="newMessages"] {
+    color: #0DD1E5 !important;
+}
+
+/* Chat input gets the same deep-glass treatment as YASB cards */
+[class*="channelTextArea"],
+[class*="scrollableContainer"] {
+    border-color: rgba(137, 209, 223, 0.10) !important;
+    box-shadow:
+        inset 0 1px 0 rgba(244, 251, 255, 0.025),
+        0 0 18px rgba(13, 209, 229, 0.018) !important;
+}
+
+/* Floating surfaces: faint astral edge, no giant cyan panels */
+[role="menu"],
+[class*="popout"],
+[class*="picker"],
+[class*="tooltip"] {
+    box-shadow:
+        0 10px 32px rgba(0,0,0,0.36),
+        0 0 0 1px rgba(76,192,216,0.08),
+        0 0 26px rgba(13,209,229,0.025) !important;
+}
