@@ -1,0 +1,20 @@
+[display]
+horizontal_padding = 3
+vertical_padding = 0
+width = 60
+show_translation = ["english"]
+quote_color = "{{colors.primary.default.hex}}"
+translation_color = "dim" 
+border_color = "{{colors.secondary.default.hex}}"
+font_size = "medium"
+bold = true
+border = true
+rounded_border = true
+source = false
+modes = ["proverb", "anime"]
+seed = 0
+centered = true
+dynamic = false
+furigana_position = "above"
+animation = "scramble"
+animation_duration_ms = 1500
