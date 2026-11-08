@@ -1,0 +1,79 @@
+theme
+{
+    name = "modern"
+
+    view = view.small
+
+    background
+    {
+        color = {{colors.surface.default.hex}}
+        opacity = 100
+        // effect = 3
+    }
+
+    item
+    {
+        opacity = 100
+        radius = 0
+        prefix = 1
+
+        text
+        {
+            normal = {{colors.on_surface.default.hex}}
+            select = {{colors.on_primary.default.hex}}
+            normal-disabled = {{colors.on_surface_variant.default.hex}}
+            select-disabled = {{colors.on_surface_variant.default.hex}}
+        }
+
+        back
+        {
+            select = {{colors.primary.default.hex}}
+            select-disabled = {{colors.primary.default.hex}}44
+        }
+    }
+
+     font
+     {
+         size = 13
+         name = "JetBrainsMono NFP"
+         weight = 2
+         italic = 0
+     }
+
+    border
+    {
+        enabled = true
+        size = 1
+        color = {{colors.primary.default.hex}}
+        opacity = 100
+        radius = 0
+    }
+
+    shadow
+    {
+        enabled = false
+        size = 0
+        opacity = 0
+        color = {{colors.shadow.default.hex}}
+    }
+
+    separator
+    {
+        size = 0
+        color = {{colors.primary.default.hex}}0e
+    }
+
+    symbol
+    {
+        normal = {{colors.primary.default.hex}}
+        select = {{colors.on_primary.default.hex}}
+        normal-disabled = {{colors.outline.default.hex}}
+        select-disabled = {{colors.outline.default.hex}}
+    }
+
+    image
+    {
+        enabled = false
+        color = [{{colors.primary_container.default.hex}}, {{colors.primary.default.hex}}, {{colors.surface_container_highest.default.hex}}]
+    }
+}
