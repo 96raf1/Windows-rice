@@ -87,3 +87,6 @@ You can follow the steps below, or jump to Sam's [**setup video**](https://youtu
 
 ---
 
+<p align="center">
+The rest of the applications and CLIs should have simple and easy to follow guides, so just follow them. Besides, Sam (Sleepycathey) already made tutorials on this, so you shouldn't struggle too hard.
+</p>
